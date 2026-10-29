@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>window.__resources = {"https://unpkg.com/react@18.3.1/umd/react.production.min.js":"/nextpagekids-site/kit/vendor/react.production.min.js","https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js":"/nextpagekids-site/kit/vendor/react-dom.production.min.js"};</script>
+<script src="/nextpagekids-site/kit/support.js"></script>
+<meta name="robots" content="noindex, nofollow"><style>html,body{margin:0;background:transparent;overflow:hidden}doc-page{padding:0!important;background:transparent!important;min-height:0!important;min-width:0!important}doc-page>section.page{border-radius:0!important;box-shadow:none!important;margin:0!important}</style>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="/nextpagekids-site/kit/design-system/tokens/fonts.css">
+  <link rel="stylesheet" href="/nextpagekids-site/kit/design-system/tokens/colors.css">
+  <link rel="stylesheet" href="/nextpagekids-site/kit/design-system/tokens/typography.css">
+  <link rel="stylesheet" href="/nextpagekids-site/kit/design-system/tokens/spacing.css">
+  <link rel="stylesheet" href="/nextpagekids-site/kit/design-system/tokens/effects.css">
+  <link rel="stylesheet" href="/nextpagekids-site/kit/design-system/tokens/shapes.css">
+  <link rel="stylesheet" href="/nextpagekids-site/kit/design-system/tokens/base.css">
+  <link rel="stylesheet" href="/nextpagekids-site/kit/design-system/styles.css">
+  <script src="/nextpagekids-site/kit/design-system/_ds_bundle.js"></script>
+  <script src="/nextpagekids-site/kit/doc-page.js"></script>
+  <style>doc-page:not(:defined){visibility:hidden} a{color:var(--ink-900)} a:hover{color:var(--tomato-500)}</style>
+</helmet>
+<doc-page>
+
+<section class="page" data-screen-label="01 Cover">
+  <div style="position:relative;height:100%;box-sizing:border-box;padding:40px;background:{{ coverBg }};color:var(--ink-900);display:flex;flex-direction:column">
+    <div class="np-scallop np-scallop--cloud" style="flex:1;background:var(--print-paper);box-sizing:border-box;display:flex">
+      <div style="flex:1;display:flex;flex-direction:column;padding:56px 44px 20px;position:relative">
+        <div style="font:800 15px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:var(--print-tomato)">Reading kit</div>
+        <div style="font:400 {{ coverTitleSize }}px/0.98 var(--font-display);letter-spacing:-.025em;margin-top:18px;padding-right:110px;text-wrap:balance">{{ title }}</div>
+        <div style="font:600 21px/1.2 var(--font-body);color:var(--ink-700);margin-top:16px">by {{ author }}</div>
+        <div style="margin-top:auto;display:grid;gap:6px">
+          <div style="font:400 40px/1 var(--font-hand);color:var(--print-cobalt);transform:rotate(-3deg);transform-origin:left;width:max-content">this kit belongs to</div>
+          <sc-if value="{{ hasName }}" hint-placeholder-val="{{ true }}">
+            <div style="font:400 {{ nameSize }}px/1 var(--font-display);letter-spacing:-.025em;color:{{ nameColor }}">{{ kidName }}</div>
+          </sc-if>
+          <sc-if value="{{ noName }}" hint-placeholder-val="{{ false }}">
+            <div style="height:110px;border-bottom:3px solid var(--ink-900);max-width:520px"></div>
+          </sc-if>
+        </div>
+        <div style="margin-top:44px;padding-top:22px;border-top:1.5px solid var(--border-subtle)">
+          <div style="font:800 13px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-500)">Inside</div>
+          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px;margin-top:16px">
+            <sc-for list="{{ inside }}" as="it" hint-placeholder-count="10">
+              <div style="display:flex;align-items:center;gap:12px;font:600 17px/1.2 var(--font-body)">
+                <x-import component-from-global-scope="NextPageKidsDesignSystem_372e96.Icon" name="{{ it.icon }}" size="{{ 20 }}" color="var(--print-tomato)" hint-size="20px,20px"></x-import>
+                <span>{{ it.label }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:28px">
+          <span style="font:400 24px/1 var(--font-display)">NextPage <span style="color:var(--print-tomato)">Kids</span></span>
+          <span style="font:700 14px/1 var(--font-body);color:var(--ink-700)">nextpagekids.com</span>
+        </div>
+      </div>
+    </div>
+    <x-import component-from-global-scope="NextPageKidsDesignSystem_372e96.Ribbon" color="{{ ribbon }}" width="{{ 72 }}" height="{{ 210 }}" style="position:absolute;top:0;right:92px" hint-size="72px,210px"></x-import>
+  </div>
+</section>
+</doc-page>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;book&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;charlottes-web&quot;,&quot;harry-potter-1&quot;,&quot;wonder&quot;],&quot;default&quot;:&quot;charlottes-web&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Kit&quot;},&quot;kidName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Maya&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Child&quot;},&quot;kidAge&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:8,&quot;min&quot;:0,&quot;max&quot;:15,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Child&quot;},&quot;ribbon&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;tomato&quot;,&quot;sunflower&quot;,&quot;cobalt&quot;,&quot;rose&quot;,&quot;clover&quot;,&quot;sky&quot;,&quot;lilac&quot;,&quot;sea&quot;],&quot;default&quot;:&quot;cobalt&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Child&quot;},&quot;grownUpPages&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Kit&quot;},&quot;inkSaver&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Kit&quot;}}">
+class Component extends DCLogic {
+  static BOOKS = {"charlottes-web":{"title":"Charlotte's Web","shortTitle":"Charlotte's Web","author":"E.B. White","coverTitle":104,"readAlone":7,"readAloud":5,"guide":{"fit":"","tone":"","about":"","ending":"","meta":""},"topics":[],"track":0,"trackUnit":"chapter","chars":[],"words":[],"easy":[],"medium":[],"challenge":[],"dinner":[],"readNext":[],"make":{"prompt":"","frames":[]},"movies":[]},"harry-potter-1":{"title":"Harry Potter and the Sorcerer's Stone","shortTitle":"Sorcerer's Stone","author":"J.K. Rowling","coverTitle":72,"readAlone":8,"readAloud":7,"guide":{"fit":"","tone":"","about":"","ending":"","meta":""},"topics":[],"track":0,"trackUnit":"chapter","chars":[],"words":[],"easy":[],"medium":[],"challenge":[],"dinner":[],"readNext":[],"make":{"prompt":"","frames":[]},"movies":[]},"wonder":{"title":"Wonder","shortTitle":"Wonder","author":"R.J. Palacio","coverTitle":150,"readAlone":9,"readAloud":8,"guide":{"fit":"","tone":"","about":"","ending":"","meta":""},"topics":[],"track":0,"trackUnit":"part","chars":[],"words":[],"easy":[],"medium":[],"challenge":[],"dinner":[],"readNext":[],"make":{"prompt":"","frames":[]},"movies":[]}};
+  remeasure() {
+    const run = () => document.querySelectorAll('doc-page').forEach(d => d._measure && d._measure());
+    customElements.whenDefined('doc-page').then(() => { run(); requestAnimationFrame(run); setTimeout(run, 300); });
+  }
+  componentDidMount() { this.remeasure(); }
+  componentDidUpdate() { this.remeasure(); }
+  renderVals() {
+    const p = this.props;
+    const b = Component.BOOKS[p.book] || Component.BOOKS["charlottes-web"];
+    const name = (p.kidName ?? "Maya").trim();
+    const hasName = name.length > 0;
+    const age = p.kidAge ?? 8;
+    const ribbon = p.ribbon ?? "cobalt";
+    const ink = !!p.inkSaver;
+    const poss = hasName ? name + (/s$/i.test(name) ? "'" : "'s") : "My";
+    const accents = ["var(--print-pink)", "var(--print-sky)", "var(--print-clover)", "var(--print-sunflower)"];
+    const lvl = { "A lot": 3, "Some": 2, "A little": 1, "None": 0 };
+    let verdictKind = "good", verdictNote;
+    const who = hasName ? name : "Your kid";
+    if (!age) { verdictNote = b.guide.fit; }
+    else if (age >= b.readAlone) verdictNote = `At ${age}, ${who} is right in range to read it alone.`;
+    else if (age >= b.readAloud) { verdictKind = "together"; verdictNote = `At ${age}, ${who} will enjoy it most as a read-aloud with you.`; }
+    else { verdictKind = "notyet"; verdictNote = `Better at ${b.readAloud} and up as a read-aloud, and ${b.readAlone} and up alone.`; }
+    const unit = b.trackUnit;
+    return {
+      title: b.title, shortTitle: b.shortTitle, author: b.author, guide: b.guide,
+      coverTitleSize: b.coverTitle,
+      kidName: name, hasName, noName: !hasName, ribbon, grownUpPages: p.grownUpPages ?? true,
+      possessive: poss,
+      nameSize: name.length <= 6 ? 128 : name.length <= 9 ? 100 : 76,
+      nameColor: ribbon === "sunflower" ? "var(--ink-900)" : `var(--ribbon-${ribbon})`,
+      coverBg: ink ? "var(--print-paper)" : "var(--print-sky)",
+      certBg: ink ? "var(--print-paper)" : "var(--print-sunflower)",
+      dinnerBg: ink ? "var(--print-paper)" : "var(--print-pink)",
+      footerLeft: hasName ? `Made for ${name} · ${b.title}` : `${b.title} · nextpagekids.com`,
+      bookmarkOwner: hasName ? `${poss} bookmark` : "this bookmark belongs to",
+      stampName: hasName ? `read by ${name}` : "read by me",
+      stampTitleSize: b.shortTitle.length > 10 ? 20 : 26,
+      verdictFor: hasName ? `For ${name}${age ? ", age " + age : ""}` : "Our verdict",
+      verdictKind, verdictNote,
+      topics: b.topics.map(([t, level, note]) => ({ t, level, note, dots: [1, 2, 3].map(i => ({ bg: i <= lvl[level] ? "var(--ink-900)" : "transparent" })) })),
+      trackLabel: `Tick a ${unit} when you finish it`,
+      track: Array.from({ length: b.track }, (_, i) => i + 1),
+      chars: b.chars.map(([n, d], i) => ({ name: n, desc: d, bg: i % 2 ? "var(--paper-200)" : "var(--print-paper)" })).map((c, i) => ({ ...c, bg: ["rgba(255,179,198,.28)", "rgba(143,208,255,.28)", "rgba(155,214,126,.28)"][i % 3] })),
+      words: b.words.map(([w, d]) => ({ w, d })),
+      easy: b.easy.map(([q, opts, a], i) => ({ n: i + 1, q, opts, a, bg: accents[i % 4] })),
+      medium: b.medium.map(([q, a], i) => ({ n: i + 1, q, a, bg: accents[(i + 1) % 4] })),
+      challenge: b.challenge.map((q, i) => ({ n: i + 1, q, bg: accents[(i + 2) % 4] })),
+      dinner: b.dinner,
+      dinnerTip: `Pick just one question. Answer it yourself too, then let ${hasName ? name : "your child"} ask you one back.`,
+      yourTurn: hasName ? `now it's ${poss} turn` : "now it's your turn",
+      reviewPrompts: ["My favorite part was…", "My favorite character was… because…", "One thing that surprised me…", "I would tell this book to…"],
+      stars: [1, 2, 3, 4, 5],
+      readNext: b.readNext,
+      make: { prompt: b.make.prompt, frames: b.make.frames, cols: b.make.frames.length },
+      movies: b.movies,
+      moviePrompts: ["A character who looked different than I imagined", "A scene the movie added", "A scene the movie left out", "The part the movie did better", "The part the book did better"],
+      keyNote: hasName ? `Keep this page away from ${name}\nuntil the quizzes are done.` : "Keep this page until\nthe quizzes are done.",
+      challengeNote: `There are no wrong answers. Look for a reason from the story, a connection to ${hasName ? poss : "your child's"} own life, and a change of mind if they have one. Ask "what makes you think that?" and let them talk.`,
+      inside: [
+        { icon: "bookmark", label: "2 bookmarks" }, { icon: "users-round", label: "Who's who" },
+        { icon: "book-open", label: "Words to know" }, { icon: "list-checks", label: "3 quizzes" },
+        { icon: "utensils", label: "Ask at dinner" }, { icon: "star", label: "My review" },
+        { icon: "pencil", label: "Make something" }, { icon: "smile", label: "Book vs movie" },
+        { icon: "award", label: "Certificate" }, { icon: "stamp", label: "Passport stamp" }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
